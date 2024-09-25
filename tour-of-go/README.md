@@ -181,3 +181,27 @@ func main() {
   fmt.Printf("Type: %T Value: %v\n", z, z) // Type: complex128 Value: (2+3i)
 }
 ```
+
+### Zero values
+
+Variables declared without an explicit initial value are given _their zero value_.
+
+Zero values:
+
+- `0` for numeric types
+- `false` for booleans
+- `""` for strings
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var i int // 0
+  var f float64 // 0
+  var b bool // false
+  var s string // ""
+  fmt.Printf("%v %v %v %q\n", i, f, b, s)
+}
+```
