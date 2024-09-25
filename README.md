@@ -37,3 +37,20 @@ The module specifies:
   var message string
   message = "something"
   ```
+
+## Call code from another module
+
+### Steps
+
+1. create a hello directory (location of the caller): `mkdir hello`
+   a. trash old directory from first part of the tutorial
+1. `cd hello`
+1. enable dependency tracking with `go mod init example.com/hello`
+1. add a main function that calls the `Hello()` function
+   a. code executed as an application must be in a main package.
+1. edit example.com/hello module to use local greetings module: `go mod edit -replace example.com/greetings=../greetings`
+   a. allows us to redirect go tools from the module path (fake example.com/greetings) to the actual location (local directory)
+1. From the hello directory, run `go mode tidy`
+   a. syncs the example.com/hello module's dependencies
+   a. If we were referencing a real published module, the `go.mod` file would look like `require example.com/greetings v1.1.0`
+1. run the code with `go run .` from the hello directory
