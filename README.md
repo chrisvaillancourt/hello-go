@@ -93,3 +93,18 @@ Will execute functions with names beginning with `Test` in test files
 (ending in `_test.go`).
 
 Pass `-v` flag to get verbose test output i.e. `go test -v`.
+
+## [Compile and install the app](https://go.dev/doc/tutorial/compile-install)
+
+Running `go run .` is useful for compiling and running a program during dev but it doesn't generate a binary executable.
+
+The `go build` command compiles packages and dependencies without installing.
+The `go install` command compiles and installs packages.
+
+### Steps
+
+1. From the `hello/` dir, run `go build` to compile the code into an executable
+1. run the hello executable with `./hello`
+   a. prompt needs to be in the same directory as the hello executable or specify executable's path
+1. Find the Go install path where the go command installs the current package: `go list -f '{{.Target}}'`
+1. add the go install directory to your system's shell path. This allows us to run the executable without specifying where it is. Run `export PATH=$PATH:/path/to/your/install/directory` replacing `/path/to/your/install/directory` with the output from the previous step's `go list -f '{{.Target}}'` command. i.e. `export PATH=$PATH:/Users/chris/go/bin/hello`.
