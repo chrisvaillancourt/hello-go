@@ -86,3 +86,58 @@ func main() {
   fmt.Println(split(17))
 }
 ```
+
+### variables
+
+`var` statement declares a list of variables. The type comes last.
+Can be scoped to a package or function.
+
+```go
+package main
+
+import "fmt"
+
+var c, python, java bool
+
+func main() {
+  var i int
+  fmt.Println(i, c, python, java)
+}
+```
+
+#### Variables with initializers
+
+`var` declarations can include initializers, one per variable.
+We can omit the type if we provide an initial value.
+
+```go
+package main
+
+import "fmt"
+
+var i, j int = 1, 2
+
+func main() {
+  var c, python, java = true, false, "no!"
+  fmt.Println(i, j, c, python, java)
+}
+```
+
+#### Short variable declarations
+
+We can use `:=` inside a function instead of a `var` declaration. The type of the value is inferred from the initial value.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var i, j int = 1, 2
+  k := 3
+  c, python, java := true, false, "no!"
+
+  fmt.Println(i, j, k, c, python, java) // 1 2 3 true false no!
+}
+```
+```
