@@ -24,7 +24,7 @@ The module specifies:
 
 1. `mkdir greetings`
 1. `cd greetings`
-1. initialize a new go module with `go mod init example.com/greetings`. If publishing a module, the path must be the location to download the module i.e. the code's repository. See [managing dependencies](https://go.dev/doc/modules/managing-dependencies#naming_module) for more info.
+1. initialize a new go module with `go mod init example.com/greetings`. If publishing a module, the path must be the location to download the module i.e. the code's repository. See [managing dependencies](https://go.dev/doc/modules/managing-dependencies#naming_module) for more info. See [developing and publishing modules](https://go.dev/doc/modules/developing) for more info on developing modules.
 
 ### notes
 
