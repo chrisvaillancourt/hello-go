@@ -76,3 +76,20 @@ See [Go maps in action on the Go blog](https://go.dev/blog/maps) for more info.
 When looping with `for _, name := range ...`, range returns two values, the first is the index of the current item in the loop, the second is a copy of the items value. Use a `_` if you don't need the item's index. See the [blank identifier in Effective Go](https://go.dev/doc/effective_go.html#blank).
 
 See [keeping your modules compatible](https://go.dev/blog/module-compatibility) for more info on backwards compatibility.
+
+## [Add a test](https://go.dev/doc/tutorial/add-a-test)
+
+Ending a file's name with `_test.go` tells the go test command that this file
+contains test functions.
+
+Test function names have the form `TestName`, where `Name` says something about
+the specific test.
+Test functions take a pointer to the testing package's [`testing.T` type](https://pkg.go.dev/testing/#T) as a
+parameter.
+You use this parameter's methods for reporting and logging from your test.
+
+From the `greetings/` dir, run the [`go test` command](https://go.dev/cmd/go/#hdr-Test_packages) to execute the test.
+Will execute functions with names beginning with `Test` in test files
+(ending in `_test.go`).
+
+Pass `-v` flag to get verbose test output i.e. `go test -v`.
