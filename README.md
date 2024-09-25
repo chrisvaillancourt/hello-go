@@ -7,7 +7,7 @@
 1. add module requirements and checksum: `go mod tidy`
 1. run `go run .`
 
-## Create a go module
+## [Create a go module](https://go.dev/doc/tutorial/create-module)
 
 ### Modules
 
@@ -38,7 +38,7 @@ The module specifies:
   message = "something"
   ```
 
-## Call code from another module
+## [Call code from another module](https://go.dev/doc/tutorial/call-module-code)
 
 ### Steps
 
@@ -54,3 +54,7 @@ The module specifies:
    a. syncs the example.com/hello module's dependencies
    a. If we were referencing a real published module, the `go.mod` file would look like `require example.com/greetings v1.1.0`
 1. run the code with `go run .` from the hello directory
+
+## [Return and handle an error](https://go.dev/doc/tutorial/handle-errors)
+
+1. edit `greetings/greetings.go` to return an error if the name is empty
