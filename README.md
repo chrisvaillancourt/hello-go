@@ -58,3 +58,9 @@ The module specifies:
 ## [Return and handle an error](https://go.dev/doc/tutorial/handle-errors)
 
 1. edit `greetings/greetings.go` to return an error if the name is empty
+
+## [Return a random greeting](https://go.dev/doc/tutorial/random-greeting)
+
+Change code so we return one of three predefined greeting messages.
+We'll use a [slice](https://go.dev/blog/slices-intro) to do this.
+A slice is like an array, except its size changes dynamically as you add & remove items.
