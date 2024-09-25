@@ -64,3 +64,15 @@ The module specifies:
 Change code so we return one of three predefined greeting messages.
 We'll use a [slice](https://go.dev/blog/slices-intro) to do this.
 A slice is like an array, except its size changes dynamically as you add & remove items.
+
+## [return greetings for multiple people](https://go.dev/doc/tutorial/greetings-multiple-people)
+
+Handle multiple-value input by pairing input values with multi-value output.
+
+In Go, you initialize a map with the following syntax:
+`make(map[key-type]value-type)`.
+See [Go maps in action on the Go blog](https://go.dev/blog/maps) for more info.
+
+When looping with `for _, name := range ...`, range returns two values, the first is the index of the current item in the loop, the second is a copy of the items value. Use a `_` if you don't need the item's index. See the [blank identifier in Effective Go](https://go.dev/doc/effective_go.html#blank).
+
+See [keeping your modules compatible](https://go.dev/blog/module-compatibility) for more info on backwards compatibility.
