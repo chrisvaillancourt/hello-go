@@ -9,3 +9,38 @@
 Run an app with a `main` package.
 By convention, the package name is the same as the last element of the import
 path. i.e. the `"math/rand"` package comprises files that begin with the statement `package rand`.
+
+#### Exported names
+
+When importing a package, only the exported names are available (names starting with a capital letter). Lower case names aren't available outside the package.
+
+### Functions
+
+Types come after names:
+
+```go
+func add(x int, y int) int {
+  return x + y
+}
+```
+
+[See blog on go's declaration syntax](https://go.dev/blog/declaration-syntax).
+
+If two or more consecutive function parameters share a type, we can omit the
+type from each param except the last.
+
+For example:
+
+```go
+func add(x int, y int) int {
+  return x + y
+}
+```
+
+Becomes:
+
+```go
+func add(x, y int) int {
+  return x + y
+}
+```
