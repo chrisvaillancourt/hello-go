@@ -1,10 +1,8 @@
 # [Tour of Go](https://go.dev/tour/list)
 
-## Basics
+## Packages, variables, and functions
 
-### Packages, variables, and functions
-
-#### Naming packages
+### Naming packages
 
 Run an app with a `main` package.
 By convention, the package name is the same as the last element of the import
@@ -298,5 +296,78 @@ func main() {
   fmt.Println(needInt(Small)) // 21
   fmt.Println(needFloat(Small)) // 0.2
   fmt.Println(needFloat(Big)) // 1.2676506002282295e+29
+}
+```
+
+## Flow control: for, if, else, switch, and defer
+
+### for
+
+The only looping construct is the `for` loop.
+The `for` loop has three components, each separated with a `;`:
+
+1. The init statement: executed before the first loop iteration
+1. the condition expression: evaluated before every iteration
+1. the post statement: executed at the end of every iteration
+
+The init statement is usually a short variable declaration. The variables declared here are only in scope of the `for` statement.
+
+The loop continues until the boolean condition evaluates to `false`.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  sum := 0
+  for i := 0; i < 10; i++ {
+    sum += i
+  }
+  fmt.Println(sum) // 45
+}
+```
+
+The init and post statements are optional:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  sum := 1
+  for ; sum < 1000; {
+    sum += sum
+  }
+  fmt.Println(sum) // 1024
+}
+```
+
+We can write a while loop like:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  sum := 1
+  for sum < 1000 {
+    sum += sum
+  }
+  fmt.Println(sum) // 1024
+}
+```
+
+You can write an infinite loop by dropping the loop condition:
+
+```go
+package main
+
+func main() {
+  for {
+    // runs forever
+  }
 }
 ```
