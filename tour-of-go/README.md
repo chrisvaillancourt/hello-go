@@ -504,4 +504,22 @@ func main() {
 }
 ```
 
+### Defer
+
+The `defer` statement defers the execution of a function until the surrounding
+function returns.
+The function's arguments are evaluated immediately but the function isn't
+isn't executed until the surrounding function returns.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer fmt.Println("world")
+	fmt.Println("hello")
+}
+```
+
 ```
