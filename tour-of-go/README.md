@@ -422,4 +422,31 @@ func main() {
 	fmt.Println(isOverLimit(15)) // above limit
 }
 ```
+
+### if and else
+
+Variables declared inside an `if`'s short statement are available in the else
+blocks too.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func foo(val string) string {
+	if isEmpty := val == ""; isEmpty == true {
+		return "empty string"
+	} else {
+		fmt.Println(isEmpty)
+	}
+	return "bar"
+}
+
+func main() {
+	fmt.Println(foo("")) // empty string
+}
+```
+
 ```
