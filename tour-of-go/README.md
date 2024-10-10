@@ -394,4 +394,32 @@ func main() {
 	fmt.Println(isPositive(5)) // true
 }
 ```
+
+### if with a short statement
+
+The `if` statement can start with a short statement that's executed before the
+conditional.
+Variables declared by the statement are only in scope within the `if`
+statement's curly braces.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func isOverLimit(val int) string {
+	const limit = 10
+	if valPlusOne := val + 1; valPlusOne < limit {
+		return "below limit"
+	}
+	return "above limit"
+}
+
+func main() {
+	fmt.Println(isOverLimit(1))  // below limit
+	fmt.Println(isOverLimit(15)) // above limit
+}
+```
 ```
