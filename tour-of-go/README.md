@@ -522,4 +522,29 @@ func main() {
 }
 ```
 
+### Stacked defers
+
+Deferred function calls are pushed onto a stack.
+When a function returns, its deferred calls are executed in a last in, first
+out order.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("counting")
+
+	defer fmt.Println("A")
+	defer fmt.Println("B")
+	defer fmt.Println("C")
+
+	fmt.Println("done")
+}
+// counting
+// done
+// C
+// B
+// A
 ```
