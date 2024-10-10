@@ -449,4 +449,59 @@ func main() {
 }
 ```
 
+### switch
+
+More succinct version of an `if else` statements. Only the selected case is
+executed so there's no need for a `break` statement like in JavaScript.
+Switch cases are evaluated from top to bottom, stopping when the first case
+matches.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("When's Saturday?")
+	today := time.Now().Weekday()
+	switch time.Saturday {
+	case today + 0:
+		fmt.Println("Today.")
+	case today + 1:
+		fmt.Println("Tomorrow.")
+	case today + 2:
+		fmt.Println("In two days.")
+	default:
+		fmt.Println("Too far away.")
+	}
+}
+```
+
+You can write a switch statement without a condition. It's a good alternative
+to long `if else` chains.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+```
+
 ```
