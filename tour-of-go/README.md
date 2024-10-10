@@ -371,3 +371,27 @@ func main() {
   }
 }
 ```
+
+### if
+
+Parentheses aren't needed by braces `{ }` are required.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func isPositive(x int) bool {
+	if x < 0 {
+		return false
+	}
+	return true
+}
+
+func main() {
+	fmt.Println(isPositive(5)) // true
+}
+```
+```
