@@ -614,3 +614,27 @@ func main() {
 	fmt.Println(v.X) // 4
 }
 ```
+
+### Pointers to structs
+
+Fields can be accessed through a struct pointer.
+To access the field `X` of a struct when we have the struct pointer `p` we could
+write `(*p).X` or the short version `p.x`
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	p := &v
+	p.X = 1e9
+	fmt.Println(v) // {1000000000 2}
+}
+```
