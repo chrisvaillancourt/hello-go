@@ -638,3 +638,43 @@ func main() {
 	fmt.Println(v) // {1000000000 2}
 }
 ```
+
+### Struct literals
+
+A struct literal denotes a newly allocated struct value by listing the values
+of its fields.
+You can set a subset of the struct's fields with the `Name:` syntax. Unnamed
+fields will have the default zero value for that type. You can provide multiple fields by separating each with a comma:
+
+```go
+func main() {
+	type Vertex struct {
+		X, Y, Z int
+	}
+	var v2 = Vertex{X: 1, Y: 2}
+	fmt.Println(v2)
+}
+```
+
+Adding `&` as a prefix will return a pointer to the struct value.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X, Y int
+}
+
+var (
+	v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &Vertex{1, 2} // has type *Vertex
+)
+
+func main() {
+	fmt.Println(v1, p, v2, v3)
+}
+```
