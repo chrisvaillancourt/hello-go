@@ -576,3 +576,41 @@ func main() {
 	fmt.Println(j) // see the new value of j
 }
 ```
+
+### Structs
+
+A `struct` is a collection of fields.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	fmt.Println(Vertex{1, 2}) // {1 2}
+}
+```
+
+Access fields using a dot.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X) // 4
+}
+```
