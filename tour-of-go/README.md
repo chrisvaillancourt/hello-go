@@ -723,3 +723,34 @@ func main() {
 	fmt.Println(s) // [3 5 7]
 }
 ```
+
+#### slices are like references to arrays
+
+A slice doesn't store any data. A slice only describes a section of an
+underlying array.
+Modifying the elements of a slice will modify the corresponding elements in the
+underlying array.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	// 	fmt.Println(names)
+
+	a := names[0:2] // [John Paul]
+	b := names[1:3] // [Paul George]
+
+	b[0] = "XXX"
+	fmt.Println(a)     // [John XXX]
+	fmt.Println(b)     // [XXX George ]
+	fmt.Println(names) // [John XXX Geaorge Ringo]
+}
+```
