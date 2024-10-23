@@ -754,3 +754,21 @@ func main() {
 	fmt.Println(names) // [John XXX Geaorge Ringo]
 }
 ```
+
+#### Slice literals
+
+Like an array literal without the length.
+An array literal: `[3]bool{true, true, false}`.
+A slice literal: `[]bool{true, true, false}`. This creates an array and then
+builds a slice that references it.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q) // [2 3 5 7 11 13]
+}
+```
