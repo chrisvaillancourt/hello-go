@@ -805,3 +805,11 @@ func main() {
 	fmt.Println(s) //[5]
 }
 ```
+
+#### Slice length and capacity
+
+Slices have a length (the number of elements) and a capacity (the number of
+elements in the underlying array, counting from the first element in the slice).
+Get the length of a slice `s` with `len(s)`. Get the capacity with `cap(s)`.
+You can extend a slice's length by re-slicing it, provided it has sufficient
+capacity.
