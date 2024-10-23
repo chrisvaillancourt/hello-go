@@ -678,3 +678,26 @@ func main() {
 	fmt.Println(v1, p, v2, v3)
 }
 ```
+
+### Arrays
+
+The type `[n]T` is an array of `n` values of type `T`.
+`var a [10]int` declares a variable `a` as an array of 10 integers.
+The length of an array is fixed (it's a part of its type).
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var a [2]string
+	a[0] = "Hello"
+	a[1] = "World"
+	fmt.Println(a[0], a[1])
+	fmt.Println(a)
+
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	fmt.Println(primes)
+}
+```
