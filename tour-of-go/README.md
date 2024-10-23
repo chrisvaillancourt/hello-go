@@ -701,3 +701,25 @@ func main() {
 	fmt.Println(primes)
 }
 ```
+
+### Slices
+
+A dynamically sized view into an array.
+The type of a slice is `[]T` with `T` representing the element's type.
+Create a slice by specifying two indices, a low and high bound, separated by a
+colon: `a[low : high]`. The low bound is inclusive while the upper bound is
+exclusive.
+For example, `a[1:4]` creates a slice of `a` with elements 1 through 3.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+
+	var s []int = primes[1:4]
+	fmt.Println(s) // [3 5 7]
+}
+```
