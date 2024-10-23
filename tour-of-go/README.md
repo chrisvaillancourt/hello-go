@@ -772,3 +772,36 @@ func main() {
 	fmt.Println(q) // [2 3 5 7 11 13]
 }
 ```
+
+#### Slice defaults
+
+You can omit the high & low bounds when creating a slice to instead use the
+default high and low bounds.
+The default low bound is 0 and default high bound is the length of the slice.
+Given an array `var a [10] int`, all of the following are equivalent:
+
+```go
+a[0:10]
+a[:10]
+a[0:]
+a[:]
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	s := []int{2, 3, 5, 7, 11, 13}
+
+	s = s[1:4] // [3 5 7]
+	fmt.Println(s)
+
+	s = s[:2]
+	fmt.Println(s) // [3 5]
+
+	s = s[1:]
+	fmt.Println(s) //[5]
+}
+```
