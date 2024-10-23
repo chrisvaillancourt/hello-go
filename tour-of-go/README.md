@@ -813,3 +813,22 @@ elements in the underlying array, counting from the first element in the slice).
 Get the length of a slice `s` with `len(s)`. Get the capacity with `cap(s)`.
 You can extend a slice's length by re-slicing it, provided it has sufficient
 capacity.
+
+#### Nil slices
+
+The zero value of a slice is `nil`. A nil slice has a length and capacity of 0
+with no underlying array.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var s []int
+	fmt.Println(s, len(s), cap(s)) // [] 0 0
+	if s == nil {
+		fmt.Println("nil!") // nil!
+	}
+}
+```
