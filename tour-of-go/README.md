@@ -832,3 +832,12 @@ func main() {
 	}
 }
 ```
+
+#### Creating a slice with make
+
+We can use the built-in `make()` function to create slices. This is how we can
+make dynamically sized arrays. For example: `a := make([]int, 5)  // len(a)=5`
+
+`make()` allocates a zeroed array and returns a slice that refers to that array.
+You can specify the capacity by passing a third argument to `make()`:
+`b := make([]int, 0, 5) // len(b)=0, cap(b)=5`.
