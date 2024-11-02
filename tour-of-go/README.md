@@ -1008,5 +1008,34 @@ func main() {
 		// 3
 	}
 }
+```
 
+## Methods
+
+Go doesn't have classes. You can declare methods on types.
+A method is a function with a special _receiver_ argument.
+The receiver appears in its own argument list between the `func` keyword and
+the method name.
+
+For example the `Fullname` method has a receiver of type `Person` named `P`:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type Person struct {
+	First, Last string
+}
+
+func (p Person) Fullname() string {
+	return p.First + " " + p.Last
+}
+
+func main() {
+	toph := Person{"Topher", "Vaillancourt"}
+	fmt.Println(toph.Fullname()) // Topher Vaillancourt
+}
 ```
