@@ -973,3 +973,8 @@ value type.
 
 You can use the short declaration form if `val` and `ok` haven't been declared:
 `val, ok := m[key]`.
+
+### Function values
+
+Functions are values. They can be passed around like any other value.
+i.e. as arguments and return values.
