@@ -1065,3 +1065,38 @@ func main() {
 	fmt.Println(toph.Fullname()) // Topher Vaillancourt
 }
 ```
+
+### Methods on other types
+
+You can define methods on non-struct types.
+You can only declare a method with a receiver whose type is defined in the same
+package as the method. You can't declare a method with a receiver whose type is
+defined in another package
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type MyString string
+
+func (s MyString) PadStart() string {
+	return "      " + string(s)
+}
+
+type MyInt int
+
+func (i MyInt) Summed(x int) int {
+	return int(i) + x
+}
+
+func main() {
+	s := MyString("Hello")
+	fmt.Println(s.PadStart()) //       Hello
+	a := MyInt(1)
+	fmt.Println(a.Summed(1)) // 2
+}
+
+```
