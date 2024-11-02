@@ -883,3 +883,30 @@ or `for _, value := range pow`.
 You can leave out the second value to get only the index:
 `for i := range pow`.
 
+### Maps
+
+A map holds keys and values. The zero value is `nil`.
+A nil map has no keys and we can't add keys to it.
+Use the `make()` function to create a map of a given type. The returned map is
+initialized and ready for use.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m map[string]Vertex
+
+func main() {
+	m = make(map[string]Vertex)
+	m["Bell Labs"] = Vertex{
+		40.68433, -74.39967,
+	}
+	fmt.Println(m["Bell Labs"]) // {40.68433 -74.39967}
+}
+
+```
