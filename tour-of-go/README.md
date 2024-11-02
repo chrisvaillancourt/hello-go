@@ -978,3 +978,35 @@ You can use the short declaration form if `val` and `ok` haven't been declared:
 
 Functions are values. They can be passed around like any other value.
 i.e. as arguments and return values.
+
+### Function closures
+
+A function may be a closure. A closure is a function that references variables
+outside of its body.
+The function can access and assign to those referenced variables.
+
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos := adder()
+	for i := 0; i < 3; i++ {
+		fmt.Println(pos(i))
+		// Prints:
+		// 0
+		// 1
+		// 3
+	}
+}
+
+```
