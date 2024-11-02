@@ -1039,3 +1039,29 @@ func main() {
 	fmt.Println(toph.Fullname()) // Topher Vaillancourt
 }
 ```
+
+### Methods are functions
+
+A method is just a function with a receiver argument. Here's the same
+`Fullname()` as a regular function with the same functionality:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type Person struct {
+	First, Last string
+}
+
+func (p Person) Fullname() string {
+	return p.First + " " + p.Last
+}
+
+func main() {
+	toph := Person{"Topher", "Vaillancourt"}
+	fmt.Println(toph.Fullname()) // Topher Vaillancourt
+}
+```
