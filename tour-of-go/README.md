@@ -841,3 +841,19 @@ make dynamically sized arrays. For example: `a := make([]int, 5)  // len(a)=5`
 `make()` allocates a zeroed array and returns a slice that refers to that array.
 You can specify the capacity by passing a third argument to `make()`:
 `b := make([]int, 0, 5) // len(b)=0, cap(b)=5`.
+
+#### Appending to a slice
+
+Add elements to a slice with built-in `append()`.
+The first parameter is the slice to append to.
+The second parameter is the value to add to the slice.
+
+```go
+var s []int
+// append works on nil slices.
+s = append(s, 0)
+```
+
+More than one value can be appended at a time: `s = append(s, 2, 3, 4)`.
+
+See [this blog on using go slices](https://go.dev/blog/go-slices-usage-and-internals) for more info.
