@@ -910,7 +910,7 @@ func main() {
 }
 ```
 
-### Map literals
+#### Map literals
 
 Map literals are like struct literals but the keys are required.
 
@@ -960,3 +960,16 @@ func main() {
 	fmt.Println(m)
 }
 ```
+
+#### Mutating maps
+
+To insert or update an value: `m[key] = value`
+Retrieve a value: `val = m[key]`.
+Delete an element: `delete(m, key)`
+To check if a key is present: `val, ok = m[key]`. If `key` is in `m`, `ok` is
+`true`. Otherwise, `ok` is `false`.
+If the `key` isn't in the map, then the value is the zero value for the map's
+value type.
+
+You can use the short declaration form if `val` and `ok` haven't been declared:
+`val, ok := m[key]`.
