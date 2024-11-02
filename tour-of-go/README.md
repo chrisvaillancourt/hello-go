@@ -857,3 +857,29 @@ s = append(s, 0)
 More than one value can be appended at a time: `s = append(s, 2, 3, 4)`.
 
 See [this blog on using go slices](https://go.dev/blog/go-slices-usage-and-internals) for more info.
+
+### Range
+
+Use `range` with a `for` loop to iterate over a slice or map.
+When using `range` on a slice, two values are returned on each iteration.
+The first is the index and the second is a copy of the value at that index.
+
+```go
+package main
+
+import "fmt"
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+}
+```
+
+You can skip the index or value by assigning `_` to it: `for i, _ := range pow`
+or `for _, value := range pow`.
+You can leave out the second value to get only the index:
+`for i := range pow`.
+
